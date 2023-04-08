@@ -71,33 +71,31 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 }
 
-extension HomeViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 50
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == mainImageCollectionView {
-            let height = collectionView.frame.height
-            return CGSize(width: 210.0, height: height)
-        } else if collectionView == horizontalImageCollectionView {
-            let width = collectionView.frame.width
-            return CGSize(width: width, height: width)
-        }
-        return CGSize(width: 0, height: 0)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 12.0, bottom: 0, right: 12.0)
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("collectionView: \(collectionView)\tindex:\(indexPath)")
     }
 }
 
-extension HomeViewController: UICollectionViewDelegate {
-    
+// MARK: - ScrollViewDelegate
+extension HomeViewController: UIScrollViewDelegate {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        guard let layout = self.mainImageCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
+        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+        let cellInset = (mainImageCollectionView.frame.width - cellWidthIncludingSpacing) / 2
+        let estimatedIndex = scrollView.contentOffset.x / cellWidthIncludingSpacing
+        let index: Int
+        
+        if velocity.x > 0 {
+            index = Int(ceil(estimatedIndex))
+        } else if velocity.x < 0 {
+            index = Int(floor(estimatedIndex))
+        } else {
+            index = Int(round(estimatedIndex))
+        }
+        let pointeeX = (CGFloat(index) * cellWidthIncludingSpacing) - cellInset
+        targetContentOffset.pointee = CGPoint(x: pointeeX, y: 0)
+    }
 }
 
 // MARK: - Layout

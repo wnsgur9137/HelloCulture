@@ -33,11 +33,16 @@ final class HomeView: UIView {
     lazy var mainImageCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 240.0, height: 280.0)
+        layout.minimumLineSpacing = 10.0
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 12.0, bottom: 0, right: 12.0)
         collectionView.backgroundColor = .white
         collectionView.register(ImageCell.self, forCellWithReuseIdentifier: "ImageCell")
         collectionView.backgroundColor = .black
+        collectionView.isPagingEnabled = false
+        collectionView.decelerationRate = .fast
         return collectionView
     }()
     
