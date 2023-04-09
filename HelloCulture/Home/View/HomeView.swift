@@ -49,6 +49,8 @@ final class HomeView: UIView {
     lazy var horizontalImageCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
+        let itemSize = UIScreen.main.bounds.width - 32.0
+        layout.itemSize = CGSize(width: itemSize, height: itemSize)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .white

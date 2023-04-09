@@ -53,14 +53,15 @@ final class HomeViewController: UIViewController {
 // MARK: - CollectionView
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        var itemCount = 0
         if collectionView == mainImageCollectionView {
-            print("verticalImageCollectionView: 10")
-            return 10
+            itemCount = 10
+            return itemCount
         } else if collectionView == horizontalImageCollectionView {
-            print("horizontalImageCollectionView: 5")
-            return 30
+            itemCount = 5
+            return 5
         }
-        return 10
+        return itemCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -73,7 +74,6 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("collectionView: \(collectionView)\tindex:\(indexPath)")
     }
 }
 
