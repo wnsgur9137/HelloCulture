@@ -41,26 +41,32 @@ final class HomeViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     private func configureCollectionView() {
         mainImageCollectionView.dataSource = self
         mainImageCollectionView.delegate = self
         
         horizontalImageCollectionView.dataSource = self
-        mainImageCollectionView.delegate = self
+        horizontalImageCollectionView.delegate = self
     }
 }
 
 // MARK: - CollectionView
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        var itemCount = 0
         if collectionView == mainImageCollectionView {
-            print("verticalImageCollectionView: 10")
-            return 10
+            itemCount = 10
+            return itemCount
         } else if collectionView == horizontalImageCollectionView {
-            print("horizontalImageCollectionView: 5")
-            return 30
+            itemCount = 10
+            return itemCount
         }
-        return 10
+        return itemCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -73,7 +79,8 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("collectionView: \(collectionView)\tindex:\(indexPath)")
+        let detailViewController = DetailViewController()
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 
@@ -109,9 +116,9 @@ extension HomeViewController {
     
     private func setLayoutConstraints() {
         NSLayoutConstraint.activate([
-            homeHeaderView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            homeHeaderView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            homeHeaderView.heightAnchor.constraint(equalToConstant: 40.0),
+            homeHeaderView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            homeHeaderView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            homeHeaderView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             
             homeView.topAnchor.constraint(equalTo: homeHeaderView.bottomAnchor),
             homeView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),

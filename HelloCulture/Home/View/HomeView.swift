@@ -24,7 +24,7 @@ final class HomeView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Hello! Culture!"
+        label.text = "Hello, Culture!"
         label.textColor = .label
         label.font = .systemFont(ofSize: 20.0, weight: .bold)
         return label
@@ -43,19 +43,42 @@ final class HomeView: UIView {
         collectionView.backgroundColor = .black
         collectionView.isPagingEnabled = false
         collectionView.decelerationRate = .fast
+        collectionView.showsHorizontalScrollIndicator = false
         return collectionView
+    }()
+    
+    private let todayCurltureLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Today Culture"
+        label.textColor = .label
+        label.font = .systemFont(ofSize: 20.0, weight: .bold)
+        return label
     }()
     
     lazy var horizontalImageCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
+        let itemSize = UIScreen.main.bounds.width - 32.0
+        layout.itemSize = CGSize(width: itemSize, height: itemSize)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .white
         collectionView.register(ImageCell.self, forCellWithReuseIdentifier: "ImageCell")
         collectionView.layer.cornerRadius = 12.0
         collectionView.backgroundColor = .green
+        collectionView.isScrollEnabled = false
+        collectionView.showsVerticalScrollIndicator = false
         return collectionView
+    }()
+    
+    private let seeMoreButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("더 보기", for: .normal)
+        button.titleLabel?.textColor = .white
+        button.titleLabel?.font = .systemFont(ofSize: 32.0, weight: .bold)
+        return button
     }()
     
     override init(frame: CGRect) {
@@ -76,13 +99,16 @@ extension HomeView {
         [
             titleLabel,
             mainImageCollectionView,
+            todayCurltureLabel,
             horizontalImageCollectionView,
+            seeMoreButton,
         ].forEach { contentView.addSubview($0) }
         scrollView.addSubview(contentView)
         self.addSubview(scrollView)
     }
     
     private func setLayoutConstraints() {
+        let contentViewHeight = UIScreen.main.bounds.height + ((UIScreen.main.bounds.width - 32.0) * 10)
         NSLayoutConstraint.activate([
             scrollView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width),
             scrollView.topAnchor.constraint(equalTo: self.topAnchor),
@@ -96,7 +122,7 @@ extension HomeView {
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            contentView.heightAnchor.constraint(equalToConstant: 1200.0),
+            contentView.heightAnchor.constraint(equalToConstant: contentViewHeight),
             
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12.0),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12.0),
@@ -106,10 +132,16 @@ extension HomeView {
             mainImageCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             mainImageCollectionView.heightAnchor.constraint(equalToConstant: 280.0),
 
-            horizontalImageCollectionView.topAnchor.constraint(equalTo: mainImageCollectionView.bottomAnchor, constant: 16.0),
+            todayCurltureLabel.topAnchor.constraint(equalTo: mainImageCollectionView.bottomAnchor, constant: 48.0),
+            todayCurltureLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            
+            horizontalImageCollectionView.topAnchor.constraint(equalTo: todayCurltureLabel.bottomAnchor, constant: 8.0),
             horizontalImageCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.0),
             horizontalImageCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.0),
-            horizontalImageCollectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            horizontalImageCollectionView.bottomAnchor.constraint(equalTo: seeMoreButton.bottomAnchor, constant: -32.0),
+            
+            seeMoreButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -32.0),
+            seeMoreButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
         ])
     }
 }
