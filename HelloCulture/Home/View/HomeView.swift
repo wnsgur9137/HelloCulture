@@ -18,7 +18,7 @@ final class HomeView: UIView {
     private let contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        return view g
+        return view
     }()
     
     private let titleLabel: UILabel = {
