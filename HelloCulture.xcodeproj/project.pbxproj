@@ -34,6 +34,11 @@
 		66602D6429E44047005905D6 /* DetailUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUsecase.swift; sourceTree = "<group>"; };
 		66602D6629E44050005905D6 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		66602D6829E4405D005905D6 /* HomeUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUsecase.swift; sourceTree = "<group>"; };
+		66602D7E29EA88D4005905D6 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		66602D7F29EA88D4005905D6 /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
+		66602D8029EA88D4005905D6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		66602D8129EA88D4005905D6 /* NetworkConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigurable.swift; sourceTree = "<group>"; };
+		66602D8229EA88D4005905D6 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		666CC900B9397FE326EF36CC /* Pods-HelloCulture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloCulture.debug.xcconfig"; path = "Target Support Files/Pods-HelloCulture/Pods-HelloCulture.debug.xcconfig"; sourceTree = "<group>"; };
 		66BFBE8429DC208B00667E2B /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		66BFBE8729DC2EBC00667E2B /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
@@ -149,6 +154,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		66602D7D29EA88D4005905D6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				66602D7E29EA88D4005905D6 /* APIEndpoints.swift */,
+				66602D7F29EA88D4005905D6 /* DataTransferService.swift */,
+				66602D8029EA88D4005905D6 /* NetworkService.swift */,
+				66602D8129EA88D4005905D6 /* NetworkConfigurable.swift */,
+				66602D8229EA88D4005905D6 /* Endpoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		66D4F34C29DC1A820082BDEE = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +192,7 @@
 				66602D5D29E43FC9005905D6 /* AppLifeCycle */,
 				66602D5E29E43FD8005905D6 /* Resources */,
 				66D4F36629DC1A830082BDEE /* Info.plist */,
+				66602D7D29EA88D4005905D6 /* Network */,
 			);
 			path = HelloCulture;
 			sourceTree = "<group>";
