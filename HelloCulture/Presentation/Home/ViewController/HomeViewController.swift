@@ -19,7 +19,7 @@ final class HomeViewController: UIViewController {
     
     init() {
         self.viewModel = HomeViewModel()
-        self.mainImageCollectionView = homeView.mainImageCollectionView
+        self.mainImageCollectionView = homeView.titleImageCollectionView
         self.horizontalImageCollectionView = homeView.horizontalImageCollectionView
         super.init(nibName: nil, bundle: nil)
     }
@@ -41,26 +41,29 @@ final class HomeViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     private func configureCollectionView() {
         mainImageCollectionView.dataSource = self
         mainImageCollectionView.delegate = self
         
         horizontalImageCollectionView.dataSource = self
-        mainImageCollectionView.delegate = self
+        horizontalImageCollectionView.delegate = self
     }
 }
 
-// MARK: - CollectionView
+// MARK: - CollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == mainImageCollectionView {
-            print("verticalImageCollectionView: 10")
             return 10
         } else if collectionView == horizontalImageCollectionView {
-            print("horizontalImageCollectionView: 5")
-            return 30
+            return 10
         }
-        return 10
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -71,9 +74,11 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: - CollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("collectionView: \(collectionView)\tindex:\(indexPath)")
+        let detailViewController = DetailViewController()
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 
@@ -109,9 +114,9 @@ extension HomeViewController {
     
     private func setLayoutConstraints() {
         NSLayoutConstraint.activate([
-            homeHeaderView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            homeHeaderView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            homeHeaderView.heightAnchor.constraint(equalToConstant: 40.0),
+            homeHeaderView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            homeHeaderView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            homeHeaderView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             
             homeView.topAnchor.constraint(equalTo: homeHeaderView.bottomAnchor),
             homeView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
