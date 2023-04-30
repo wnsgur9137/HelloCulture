@@ -19,7 +19,7 @@ final class HomeViewController: UIViewController {
     
     init() {
         self.viewModel = HomeViewModel()
-        self.mainImageCollectionView = homeView.mainImageCollectionView
+        self.mainImageCollectionView = homeView.titleImageCollectionView
         self.horizontalImageCollectionView = homeView.horizontalImageCollectionView
         super.init(nibName: nil, bundle: nil)
     }

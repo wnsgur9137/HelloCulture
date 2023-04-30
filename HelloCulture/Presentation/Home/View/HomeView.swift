@@ -30,7 +30,7 @@ final class HomeView: UIView {
         return label
     }()
     
-    lazy var mainImageCollectionView: UICollectionView = {
+    lazy var titleImageCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: 240.0, height: 280.0)
@@ -38,9 +38,7 @@ final class HomeView: UIView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 12.0, bottom: 0, right: 12.0)
-        collectionView.backgroundColor = .white
         collectionView.register(ImageCell.self, forCellWithReuseIdentifier: "ImageCell")
-        collectionView.backgroundColor = .black
         collectionView.isPagingEnabled = false
         collectionView.decelerationRate = .fast
         collectionView.showsHorizontalScrollIndicator = false
@@ -98,7 +96,7 @@ extension HomeView {
     private func addSubviews() {
         [
             titleLabel,
-            mainImageCollectionView,
+            titleImageCollectionView,
             todayCurltureLabel,
             horizontalImageCollectionView,
             seeMoreButton,
@@ -127,12 +125,12 @@ extension HomeView {
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12.0),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12.0),
 
-            mainImageCollectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8.0),
-            mainImageCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            mainImageCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            mainImageCollectionView.heightAnchor.constraint(equalToConstant: 280.0),
+            titleImageCollectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8.0),
+            titleImageCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            titleImageCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            titleImageCollectionView.heightAnchor.constraint(equalToConstant: 280.0),
 
-            todayCurltureLabel.topAnchor.constraint(equalTo: mainImageCollectionView.bottomAnchor, constant: 48.0),
+            todayCurltureLabel.topAnchor.constraint(equalTo: titleImageCollectionView.bottomAnchor, constant: 48.0),
             todayCurltureLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             
             horizontalImageCollectionView.topAnchor.constraint(equalTo: todayCurltureLabel.bottomAnchor, constant: 8.0),

@@ -15,6 +15,14 @@
 		66602D6729E44050005905D6 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66602D6629E44050005905D6 /* DetailView.swift */; };
 		66602D6929E4405D005905D6 /* HomeUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66602D6829E4405D005905D6 /* HomeUsecase.swift */; };
 		66602D8D29EA94E8005905D6 /* HomeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66602D8C29EA94E8005905D6 /* HomeSectionView.swift */; };
+		66602D8F29EBCFF1005905D6 /* HomeTitleSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66602D8E29EBCFF1005905D6 /* HomeTitleSectionView.swift */; };
+		66602D9129EBD258005905D6 /* HomeViewPrototype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66602D9029EBD258005905D6 /* HomeViewPrototype.swift */; };
+		66602D9329EBD2CE005905D6 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66602D9229EBD2CE005905D6 /* UIView+.swift */; };
+		6689976A29FE364B00C37CDF /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6689976529FE364B00C37CDF /* APIEndpoints.swift */; };
+		6689976B29FE364B00C37CDF /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6689976629FE364B00C37CDF /* DataTransferService.swift */; };
+		6689976C29FE364B00C37CDF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6689976729FE364B00C37CDF /* NetworkService.swift */; };
+		6689976D29FE364B00C37CDF /* NetworkConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6689976829FE364B00C37CDF /* NetworkConfigurable.swift */; };
+		6689976E29FE364B00C37CDF /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6689976929FE364B00C37CDF /* Endpoint.swift */; };
 		66BFBE8529DC208B00667E2B /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BFBE8429DC208B00667E2B /* ImageCell.swift */; };
 		66BFBE8829DC2EBC00667E2B /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BFBE8729DC2EBC00667E2B /* HomeHeaderView.swift */; };
 		66D4F35929DC1A820082BDEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D4F35829DC1A820082BDEE /* AppDelegate.swift */; };
@@ -35,13 +43,16 @@
 		66602D6429E44047005905D6 /* DetailUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUsecase.swift; sourceTree = "<group>"; };
 		66602D6629E44050005905D6 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		66602D6829E4405D005905D6 /* HomeUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUsecase.swift; sourceTree = "<group>"; };
-		66602D7E29EA88D4005905D6 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
-		66602D7F29EA88D4005905D6 /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
-		66602D8029EA88D4005905D6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		66602D8129EA88D4005905D6 /* NetworkConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigurable.swift; sourceTree = "<group>"; };
-		66602D8229EA88D4005905D6 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		66602D8C29EA94E8005905D6 /* HomeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionView.swift; sourceTree = "<group>"; };
+		66602D8E29EBCFF1005905D6 /* HomeTitleSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTitleSectionView.swift; sourceTree = "<group>"; };
+		66602D9029EBD258005905D6 /* HomeViewPrototype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPrototype.swift; sourceTree = "<group>"; };
+		66602D9229EBD2CE005905D6 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		666CC900B9397FE326EF36CC /* Pods-HelloCulture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloCulture.debug.xcconfig"; path = "Target Support Files/Pods-HelloCulture/Pods-HelloCulture.debug.xcconfig"; sourceTree = "<group>"; };
+		6689976529FE364B00C37CDF /* APIEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		6689976629FE364B00C37CDF /* DataTransferService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
+		6689976729FE364B00C37CDF /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		6689976829FE364B00C37CDF /* NetworkConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConfigurable.swift; sourceTree = "<group>"; };
+		6689976929FE364B00C37CDF /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		66BFBE8429DC208B00667E2B /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		66BFBE8729DC2EBC00667E2B /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		66D4F35529DC1A820082BDEE /* HelloCulture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloCulture.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,14 +167,39 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		66602D7D29EA88D4005905D6 /* Network */ = {
+		66602D9429EBD2D3005905D6 /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				66602D7E29EA88D4005905D6 /* APIEndpoints.swift */,
-				66602D7F29EA88D4005905D6 /* DataTransferService.swift */,
-				66602D8029EA88D4005905D6 /* NetworkService.swift */,
-				66602D8129EA88D4005905D6 /* NetworkConfigurable.swift */,
-				66602D8229EA88D4005905D6 /* Endpoint.swift */,
+				66602D9529EBD2D7005905D6 /* Extension */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		66602D9529EBD2D7005905D6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				66602D9229EBD2CE005905D6 /* UIView+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		6689976329FE352500C37CDF /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				66D4F37229DC1CEB0082BDEE /* Home */,
+				66602D6129E44028005905D6 /* Detail */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		6689976429FE364B00C37CDF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6689976529FE364B00C37CDF /* APIEndpoints.swift */,
+				6689976629FE364B00C37CDF /* DataTransferService.swift */,
+				6689976729FE364B00C37CDF /* NetworkService.swift */,
+				6689976829FE364B00C37CDF /* NetworkConfigurable.swift */,
+				6689976929FE364B00C37CDF /* Endpoint.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -189,12 +225,12 @@
 		66D4F35729DC1A820082BDEE /* HelloCulture */ = {
 			isa = PBXGroup;
 			children = (
-				66D4F37229DC1CEB0082BDEE /* Home */,
-				66602D6129E44028005905D6 /* Detail */,
+				66602D9429EBD2D3005905D6 /* Global */,
+				6689976429FE364B00C37CDF /* Network */,
+				6689976329FE352500C37CDF /* Presentation */,
 				66602D5D29E43FC9005905D6 /* AppLifeCycle */,
 				66602D5E29E43FD8005905D6 /* Resources */,
 				66D4F36629DC1A830082BDEE /* Info.plist */,
-				66602D7D29EA88D4005905D6 /* Network */,
 			);
 			path = HelloCulture;
 			sourceTree = "<group>";
@@ -230,6 +266,8 @@
 			isa = PBXGroup;
 			children = (
 				66D4F37029DC1CE70082BDEE /* HomeView.swift */,
+				66602D9029EBD258005905D6 /* HomeViewPrototype.swift */,
+				66602D8E29EBCFF1005905D6 /* HomeTitleSectionView.swift */,
 				66BFBE8729DC2EBC00667E2B /* HomeHeaderView.swift */,
 				66BFBE8429DC208B00667E2B /* ImageCell.swift */,
 				66602D5B29E15433005905D6 /* ShadowView.swift */,
@@ -334,16 +372,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66602D8F29EBCFF1005905D6 /* HomeTitleSectionView.swift in Sources */,
 				66602D5C29E15433005905D6 /* ShadowView.swift in Sources */,
 				66D4F35D29DC1A820082BDEE /* MainTabBarController.swift in Sources */,
 				66602D6529E44047005905D6 /* DetailUsecase.swift in Sources */,
+				6689976B29FE364B00C37CDF /* DataTransferService.swift in Sources */,
 				66D4F35929DC1A820082BDEE /* AppDelegate.swift in Sources */,
 				66D4F36D29DC1CCE0082BDEE /* HomeViewController.swift in Sources */,
+				66602D9329EBD2CE005905D6 /* UIView+.swift in Sources */,
 				66D4F37129DC1CE70082BDEE /* HomeView.swift in Sources */,
 				66602D6929E4405D005905D6 /* HomeUsecase.swift in Sources */,
 				66BFBE8829DC2EBC00667E2B /* HomeHeaderView.swift in Sources */,
+				6689976D29FE364B00C37CDF /* NetworkConfigurable.swift in Sources */,
 				66602D6729E44050005905D6 /* DetailView.swift in Sources */,
+				6689976A29FE364B00C37CDF /* APIEndpoints.swift in Sources */,
+				6689976C29FE364B00C37CDF /* NetworkService.swift in Sources */,
+				66602D9129EBD258005905D6 /* HomeViewPrototype.swift in Sources */,
 				66D4F36F29DC1CE20082BDEE /* HomeViewModel.swift in Sources */,
+				6689976E29FE364B00C37CDF /* Endpoint.swift in Sources */,
 				66602D6029E44019005905D6 /* DetailViewController.swift in Sources */,
 				66BFBE8529DC208B00667E2B /* ImageCell.swift in Sources */,
 				66602D6329E4403E005905D6 /* DetailViewModel.swift in Sources */,

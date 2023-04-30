@@ -64,10 +64,23 @@ extension HomeSectionView {
 // MARK: - Layout
 extension HomeSectionView {
     private func addSubviews() {
-        
+        self.addSubview(titleLabel)
+        self.addSubview(seeAllButton)
+        self.addSubview(collectionView)
     }
     
     private func setLayoutConstraints() {
-        
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 12.0),
+            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12.0),
+            
+            seeAllButton.topAnchor.constraint(equalTo: titleLabel.topAnchor),
+            seeAllButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -12.0),
+            
+            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12.0),
+            collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12.0),
+            collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -12.0),
+            collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -12.0),
+        ])
     }
 }
