@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/junhyeok/study/Xcode/HelloCulture/HelloCulture/Presentation/SearchViewModel.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/junhyeok/study/Xcode/HelloCulture/HelloCulture/Presentation/SearchView.swift">
+   </FileRef>
+   <FileRef
       location = "group:HelloCulture.xcodeproj">
    </FileRef>
    <FileRef
